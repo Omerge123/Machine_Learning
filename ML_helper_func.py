@@ -6,9 +6,6 @@ def scheduler(epoch, lr):
   else:
     return lr * tf.math.exp(-0.1)
 
-    callback = tf.keras.callbacks.LearningRateScheduler(scheduler)
-
-
 ##################################################### Confusion matrix #########################################
 # Note: The following confusion matrix code is a remix of Scikit-Learn's 
 # plot_confusion_matrix function - https://scikit-learn.org/stable/modules/generated/sklearn.metrics.plot_confusion_matrix.html
