@@ -84,6 +84,7 @@ def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_s
 
 ################## plotting a random image with probablity ###################
 import random
+import tensorflow as tf
 
 # Create a function for plotting a random image along with its prediction
 def plot_random_image(model, images, true_labels, classes):
