@@ -14,6 +14,7 @@ def scheduler(epoch, lr):
 
 import itertools
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 # Our function needs a different name to sklearn's plot_confusion_matrix
