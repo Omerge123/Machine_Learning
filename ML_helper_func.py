@@ -11,6 +11,7 @@ def scheduler(epoch, lr):
 # plot_confusion_matrix function - https://scikit-learn.org/stable/modules/generated/sklearn.metrics.plot_confusion_matrix.html
 # and Made with ML's introductory notebook - https://github.com/GokuMohandas/MadeWithML/blob/main/notebooks/08_Neural_Networks.ipynb
 import itertools
+import numpy as np
 from sklearn.metrics import confusion_matrix
 
 # Our function needs a different name to sklearn's plot_confusion_matrix
