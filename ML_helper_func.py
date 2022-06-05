@@ -12,6 +12,10 @@ def scheduler(epoch, lr):
 # and Made with ML's introductory notebook - https://github.com/GokuMohandas/MadeWithML/blob/main/notebooks/08_Neural_Networks.ipynb
 # From ZTM
 
+import itertools
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
 # Our function needs a different name to sklearn's plot_confusion_matrix
 def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15): 
 
