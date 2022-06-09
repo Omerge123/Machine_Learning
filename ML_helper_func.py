@@ -124,33 +124,4 @@ def plot_random_image(model, images, true_labels, classes):
                                                    true_label),
              color=color) # set the color to green or red
 
-############################################################################################################
-# View an image
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import random
-
-def view_random_image_from_directory (target_dir, target_class):
-  
-  """Picks a random image from file Directory
-  target_folder = target_dir+target_class
-  variable1 = target_dir
-  variable2 = target_class
-  example target_dir="pizza_steak/train/", target_class="pizza")
-  """ 
-  # Setup target directory (we'll view images from here)
-  target_folder = target_dir+target_class
-
-  # Get a random image path
-  random_image = random.sample(os.listdir(target_folder), 1)
-
-  # Read in the image and plot it using matplotlib
-  img = mpimg.imread(target_folder + "/" + random_image[0])
-  plt.imshow(img)
-  plt.title(target_class)
-  plt.axis("off");
-
-  print(f"Image shape: {img.shape}") # show the shape of the image
-
-  return img
   
