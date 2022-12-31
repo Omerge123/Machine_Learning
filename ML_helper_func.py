@@ -125,3 +125,43 @@ def plot_random_image(model, images, true_labels, classes):
              color=color) # set the color to green or red
 
   
+############ Trend Sequence builder ###########
+def trend_prep(x , y, split, hist_window, horizon):
+    """split dataset into 
+       x_train, y_train, x_vali, y_vali = trend_prep()
+       
+       Args:
+       split = nbr of split dataset between train and vali
+       hist_window = nbr of back period
+       horizon = nbr of forward period
+       
+    """
+    def data_prep(x, y, start, end, hist_window, horizon ):
+    
+        X = []
+        Y = []
+    
+        x = np.array(x)
+        y = np.array(y)
+    
+        start = start + hist_window
+    
+        if end is None:
+            end = len(x) - horizon 
+
+        for i in range(start, end):
+            indices = range(i-hist_window, i)
+            X.append(x[indices])
+
+            indicey = range(i, i+horizon)
+        
+            Y.append(y[indicey])
+        
+        return np.array(X), np.array(Y)
+    
+    
+    x_train, y_train = data_prep(x, y,     0, split, hist_window, horizon, )
+    x_vali,  y_vali  = data_prep(x, y, split, None , hist_window, horizon, )
+
+    return x_train, y_train, x_vali,  y_vali
+
