@@ -1,13 +1,13 @@
 ################################################### Learning Rate ##############################################
 #learning Rate Scheduler
-def scheduler(epoch, lr , f_epoch):
+def scheduler(epoch, learning_rate , f_epoch):
   """This function keeps the initial learning rate for the first number of epochs
      and decreases it exponentially after that
   """
   if epoch < f_epoch: #define as 1000 unless we want to tweak it 
-    return lr
+    return learning_rate
   else:
-    return lr * tf.math.exp(-0.1)
+    return learning_rate * tf.math.exp(-0.1)
 
 ##################################################### Confusion matrix #########################################
 # Note: The following confusion matrix code is a remix of Scikit-Learn's 
