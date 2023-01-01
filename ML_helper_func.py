@@ -131,9 +131,11 @@ def trend_prep(x , y, split, hist_window, horizon):
        x_train, y_train, x_vali, y_vali = trend_prep()
        
        Args:
-       split = nbr of split dataset between train and vali
-       hist_window = nbr of back period
-       horizon = nbr of forward period
+       x: pandas frame of trained dataset
+       y: pandas frame of target dataset
+       split: nbr of split dataset between train and vali
+       hist_window: nbr of back period
+       horizon: nbr of forward period
        
     """
     def data_prep(x, y, start, end, hist_window, horizon ):
