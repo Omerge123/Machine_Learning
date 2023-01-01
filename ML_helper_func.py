@@ -1,7 +1,10 @@
 ################################################### Learning Rate ##############################################
 #learning Rate Scheduler
-def scheduler(epoch, lr):
-  if epoch < 1000: #define as 1000 unless we want to tweak it 
+def scheduler(epoch, lr , f_epoch):
+  """This function keeps the initial learning rate for the first number of epochs
+     and decreases it exponentially after that
+  """
+  if epoch < f_epoch: #define as 1000 unless we want to tweak it 
     return lr
   else:
     return lr * tf.math.exp(-0.1)
